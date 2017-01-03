@@ -82,17 +82,43 @@ function isBaseCurrencySelected() {
 };
 
 //##
-let selectItems = document.getElementsByClassName('selectCurrency');
+
 // check the selected options
-function checkSelectedOptions() {
-  for ( let i = 0; i < selectItems.length; i++) {
-    selectItems[i].selectedIndex;
-    console.log(selectItems[i].selectedIndex);
-    selectedIndex = selectItems[i].selectedIndex;
-    for ( let ii = 0; ii < selectItems.length; ii++) {
-      selectItems[ii].options[selectedIndex].disabled = true;
+
+let selectItems = document.getElementsByClassName('selectCurrency');
+for ( let i = 0; i < selectItems.length; i++) {
+
+  let selectedIndex = selectItems[i].selectedIndex;
+
+  selectItems[i].options[selectedIndex].disabled = false;
+    //console.log(selectItems[i].options[selectedIndex]);
+
+  selectItems[i].addEventListener('change', function() {
+    //console.log(selectItems[i].selectedIndex);
+
+    // Disable previous option
+    let previousOption = selectItems[i].selectedIndex;
+
+    checkSelectedOptions(selectItems, i, previousOption);
+  });
+}
+
+function checkSelectedOptions(a, i, c) {
+  //for ( let i = 0; i < a.length; i++) {
+    //#a[i].selectedIndex;
+    //console.log(a[i].selectedIndex);
+    //console.log(c);
+    //console.log(selectItems[i]);
+    selectedIndex = a[i].selectedIndex;
+    //#a[i].options[selectedIndex].disabled = false;
+    //console.log(a[i].selectedIndex);
+
+    for ( let ii = 0; ii < a.length; ii++) {
+      //a[ii].options[selectedIndex].disabled = false;
+      a[ii].options[selectedIndex].disabled = true;
+      // console.log(a[ii].selectedIndex);
     };
-  };
+ // };
 };
 //checkSelectedOptions();
 // disable selected options from other selects
