@@ -5,22 +5,51 @@
   <meta name="description" content="Savings">
   <title>Savings</title>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-  <!-- <script type="text/javascript" src="http://www.floatrates.com/daily/clp.json"></script> -->
 </head>
 <body>
   <header>
     <h1>Savings</h1>
   </header> <!-- end header -->
 
+  <section class="start">
+
+    <h1>To start, select the currencies you need:</h1>
+
+    <label for="baseCurrency">Select your base currency:</label>
+    <select name="baseCurrency" id="baseCurrency" class="selectCurrency" onChange="isBaseCurrencySelected();">
+      <option value="Select currency">Select currency</option>
+      <option value="CLP">CLP</option>
+      <option value="EUR">EUR</option>
+    </select>
+    <br>
+    <h3>Select your secondary currencies (max 3):</h3>
+    <ul id="secondaryCurrenciesList">
+      <li class="selectCurrencyItem">
+        <select name="secondaryCurrencies" class="selectCurrency" id="selectSecondaryCurrency" onChange="isSecondaryCurrencySelected();" disabled>
+          <option value="Select currency">Select currency</option>
+          <option value="CLP">CLP</option>
+          <option value="EUR">EUR</option>
+        </select>
+        <button name="addSecondaryCurrencies" class="addSecondaryCurrencies" onclick="addCurrency(event);" disabled>ADD</button>
+      </li>
+
+    </ul>
+
+<button class="btnStart">Start</button>
+
+  </section><!-- end START section -->
+
+  <hr>
+
   <section class="rates">
     <h1>Rates:</h1>
-
-    <h2 id="rateUSD" class="rate__item">USD:</h2>
-    <h2 id="rateEUR" class="rate__item">EUR:</h2>
-    <h2 id="rateGBP" class="rate__item">GBP:</h2>
-
-
+    <h2 id="ratesBase">Your base currency is: <span></span></h2>
+    <ul id="rates__list">
+      <li id="rateBASE" class="rates__item"></li>
+    </ul>
   </section> <!-- end RATES section -->
+
+  <hr>
 
   <section class="convert">
     <h1>Convert:</h1>
@@ -28,20 +57,20 @@
     <label for="">How much?
       <input type="text" id="inputCurrency">
     </label>
-    <select name="selectCurrency1" id="selectCurrency1">
-      <option value=""></option> <!-- add with an array -->
+    <select name="convertCurrency1" id="convertCurrency1" class="convertCurrency">
+      <option value="Select currency">Select currency</option>
     </select>
     <span>to</span>
-    <select name="selectCurrency2" id="selectCurrency2">
-      <option value=""></option> <!-- add with an array -->
+    <select name="convertCurrency2" id="convertCurrency2" class="convertCurrency">
+      <option value="Select currency">Select currency</option>
     </select>
 
-    <button id="invertCurrency">
-      X
-    </button>
+    <button id="invertCurrency">SWAP</button>
 
     <h2 id="convertResults"></h2>
   </section> <!-- end CONVERT section -->
+
+  <hr>
 
   <footer>
     <p>Created by <a href="http://giumagnani.com">Giu Magnani</a></p>
