@@ -24,7 +24,7 @@ function getJSONP(url, success) {
 getJSONP('http://api.fixer.io/latest?base=EUR&callback=?', function(data) {
   let baseCurrency;
   const currencies = Object.keys(data.rates);
-  console.log(data);
+  // console.log(data);
   // Add currencies to currency selects
   let selects = document.getElementsByClassName('selectCurrency');
   for ( let i = 0; i < selects.length; i++ ) {
@@ -47,10 +47,10 @@ getJSONP('http://api.fixer.io/latest?base=EUR&callback=?', function(data) {
   // if EUR is base currency, do nothing.
   let ratesBase = document.getElementById('ratesBase').getElementsByTagName('span')[0];
   if ( baseCurrency === 'EUR' ) {
-    console.log('EUR yes');
+    //console.log('EUR yes');
     ratesBase.innerHTML = baseCurrency;
   } else { // else, get rates of the chosen currency.
-    console.log('EUR no');
+    //console.log('EUR no');
   };
 });
 
@@ -74,25 +74,53 @@ function isBaseCurrencySelected() {
       // if ( currencySelected !== 'Select currency' ) {
       //   console.log(secondaryCurrencyItems[i].value);
       // };
-      secondaryCurrencyItems[i].options[baseCurrency.selectedIndex].disabled = true;
-      //secondaryCurrencySelected = secondaryCurrencyItems[i].selectedIndex;
-      baseCurrency.options[secondaryCurrencyItems[i].selectedIndex].disabled = true;
-      console.log(i);
+      //secondaryCurrencyItems[i].options[baseCurrency.selectedIndex].disabled = true;
+
+      //baseCurrency.options[secondaryCurrencyItems[i].selectedIndex].disabled = true;
     };
   }
 };
 
+//##
+let selectItems = document.getElementsByClassName('selectCurrency');
+// check the selected options
+function checkSelectedOptions() {
+  for ( let i = 0; i < selectItems.length; i++) {
+    selectItems[i].selectedIndex;
+    console.log(selectItems[i].selectedIndex);
+    selectedIndex = selectItems[i].selectedIndex;
+    for ( let ii = 0; ii < selectItems.length; ii++) {
+      selectItems[ii].options[selectedIndex].disabled = true;
+    };
+  };
+};
+//checkSelectedOptions();
+// disable selected options from other selects
+// function disableOptions() {
+//   for ( let i = 0; i < selectItems.length; i++) {
+//     selectItems[i].options[baseCurrency.selectedIndex].disabled = true;
+//   };
+// }
+//##
+
+// exec onChange
+// if change or remove re enable option on other selects.
+
 function isSecondaryCurrencySelected() {
   let secondaryCurrencyItems = document.querySelectorAll("[name=secondaryCurrencies]");
-    for ( let i = 0; i < secondaryCurrencyItems.length; i++) {
-      // if ( currencySelected !== 'Select currency' ) {
-      //   console.log(secondaryCurrencyItems[i].value);
-      // };
-      secondaryCurrencyItems[i].options[baseCurrency.selectedIndex].disabled = true;
-      //secondaryCurrencySelected = secondaryCurrencyItems[i].selectedIndex;
-      baseCurrency.options[secondaryCurrencyItems[i].selectedIndex].disabled = true;
-      console.log(i);
-    };
+  //disablePreviousCurrencySelected(event);
+  var previouslySelected = event.target.selectedIndex;
+  for ( let i = 0; i < secondaryCurrencyItems.length; i++) {
+    ////////secondaryCurrencyItems[i].options[baseCurrency.selectedIndex].disabled = true;
+    ////////secondaryCurrencyItems[i].options[previouslySelected].disabled = true;
+    ////////baseCurrency.options[secondaryCurrencyItems[i].selectedIndex].disabled = true;
+  };
+  // let currencySelected = buttonParent.firstElementChild.selectedIndex;
+  //enableOptions(secondaryCurrenciesList);
+  // for ( let i = 0; i < secondaryCurrencyItems.length; i++) {
+  //   //secondaryCurrencyItems[i].options[currencySelected].disabled = false;
+  //   console.log(i.selectedIndex);
+  // };
 };
 
 // function isSelected() {
@@ -106,6 +134,7 @@ function isSecondaryCurrencySelected() {
 
 // Add secondary currency selection
 let secondaryCurrenciesList = document.getElementById('secondaryCurrenciesList');
+let removeButton;
 
 // Add button function
 function addCurrency(event) {
@@ -127,29 +156,19 @@ function addCurrency(event) {
 // Remove button function
 removeButton = document.getElementsByClassName("btnRemove");
 function removeCurrency(event) {
-  buttonParent = event.target.parentNode;
+  let buttonParent = event.target.parentNode;
   secondaryCurrenciesList.removeChild(buttonParent);
-}
+};
 
-//removeButton.onclick = removeCurrency();
 
-//#### Add CLP to the array.
-//#### Let user select the base currency
 
-//const baseCurrency = CLP;
+// enable options from removed button
+// function enableOptions(a) {
+//   for ( let i = 0; i < a.length; i++) {
+//     secondaryCurrencyItems[i].options[currencySelected].disabled = false;
+//   };
+// }
 
-//## Secondary currencies
-
-//
-// Get currency rates for base currency
-// Print currencies.
-
-// const currencies = [
-//   CLP,
-//   USD,
-//   GBP,
-//   EUR
-// ];
 
 // According to the user selection get JSON data
 
@@ -171,17 +190,4 @@ function removeCurrency(event) {
 //   GBP = data.rates.GBP;
 //   document.getElementById('EUR').innerHTML = data.rates.EUR;
 //   EUR = data.rates.EUR;
-// });
-
-function addCurrencies() {
-
-};
-
-//document.getElementById('EUR').innerHTML = data.USD_CLP.val;
-
-// document.getElementById('CLPtoEUR').addEventListener('click', function(a) {
-//   let html = 'perro';
-//   html.append(CLP / GBP);
-// //html =+ CLP / EUR;
-// document.getElementById('results').innerHTML = html;
 // });
