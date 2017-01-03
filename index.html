@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="Giu Magnani">
+  <meta name="description" content="Savings">
+  <title>Savings</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <!-- <script type="text/javascript" src="http://www.floatrates.com/daily/clp.json"></script> -->
+</head>
+<body>
+  <header>
+    <h1>Savings</h1>
+  </header> <!-- end header -->
+
+  <section class="rates">
+    <h1>Rates:</h1>
+
+    <h2 id="rateUSD" class="rate__item">USD:</h2>
+    <h2 id="rateEUR" class="rate__item">EUR:</h2>
+    <h2 id="rateGBP" class="rate__item">GBP:</h2>
+
+
+  </section> <!-- end RATES section -->
+
+  <section class="convert">
+    <h1>Convert:</h1>
+
+    <label for="">How much?
+      <input type="text" id="inputCurrency">
+    </label>
+    <select name="selectCurrency1" id="selectCurrency1">
+      <option value=""></option> <!-- add with an array -->
+    </select>
+    <span>to</span>
+    <select name="selectCurrency2" id="selectCurrency2">
+      <option value=""></option> <!-- add with an array -->
+    </select>
+
+    <button id="invertCurrency">
+      X
+    </button>
+
+    <h2 id="convertResults"></h2>
+  </section> <!-- end CONVERT section -->
+
+  <footer>
+    <p>Created by <a href="http://giumagnani.com">Giu Magnani</a></p>
+  </footer>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
