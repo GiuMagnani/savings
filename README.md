@@ -1,0 +1,1 @@
+Small app to keep track of our savings.
