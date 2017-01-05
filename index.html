@@ -32,30 +32,25 @@
         </select>
         <button name="addSecondaryCurrencies" class="addSecondaryCurrencies" onclick="addCurrency(event);" disabled>ADD</button>
       </li>
-
     </ul>
-
-<button class="btnStart">Start</button>
-
+    <button class="btnStart" id="btnStart">Start</button>
   </section><!-- end START section -->
-
   <hr>
-
   <section class="rates">
     <h1>Rates:</h1>
-    <h2 id="ratesBase">Your base currency is: <span></span></h2>
-    <ul id="rates__list">
-      <li id="rateBASE" class="rates__item"></li>
+    <div id="ratesBase" class="rates__base__container">
+      Your base currency is:
+      <span class="rates__base__name"></span>
+      <span class="rates__base__date"></span>
+    </div>
+    <ul id="rates__secondary__list">
     </ul>
   </section> <!-- end RATES section -->
-
   <hr>
-
-  <section class="convert">
+  <section class="convert"> <!-- start CONVERT section -->
     <h1>Convert:</h1>
-
     <label for="">How much?
-      <input type="text" id="inputCurrency">
+      <input type="text" id="inputCurrency" value="1">
     </label>
     <select name="convertCurrency1" id="convertCurrency1" class="convertCurrency">
       <option value="Select currency">Select currency</option>
@@ -65,7 +60,8 @@
       <option value="Select currency">Select currency</option>
     </select>
 
-    <button id="invertCurrency">SWAP</button>
+    <button id="swapCurrency">SWAP</button>
+    <button id="convertCurrency">CONVERT</button>
 
     <h2 id="convertResults"></h2>
   </section> <!-- end CONVERT section -->
@@ -76,5 +72,6 @@
     <p>Created by <a href="http://giumagnani.com">Giu Magnani</a></p>
   </footer>
   <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="rates.js"></script>
 </body>
 </html>
