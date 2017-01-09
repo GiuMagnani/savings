@@ -1,0 +1,110 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer_container {
+  background-color: $color--white;
+  border-top: 1px solid $color--black;
+  width: 100%;
+  color: $color--black;
+  vertical-align: top;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-size: 0.65em;
+  letter-spacing: 1.5px;
+  @include mq($from: desktop) {
+    height: 50px;
+  }
+}
+
+.footer__sobre_container {
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  vertical-align: top;
+  height: 50px;
+  color: $color--black;
+  transition: 0.2s ease-out;
+  transition-property: background-color;
+  @include on-event {
+    color: $color--white;
+    text-decoration: none;
+    background-color: $color--black;
+  }
+  @include mq($from: desktop) {
+    width: 15%;
+    border-right: 1px solid $color--black;
+    border-left: 1px solid $color--black;
+  }
+}
+
+.footer__legal_container {
+  width: 100%;
+  //width: calc(100% - 310px);
+  //border-right: 1px solid $color--white;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+  vertical-align: top;
+  height: 50px;
+  @include mq($from: desktop) {
+    width: 69%;
+  }
+}
+
+.footer__social_container {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: top;
+  height: 50px;
+  @include mq($from: desktop) {
+    width: 142px;
+    float: right;
+  }
+}
+
+.footer__social__item {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-left: -5px;
+  transition: 0.2s ease-out;
+  transition-property: background-color;
+  @include on-event {
+    text-decoration: none;
+    color: transparent;
+    background-color: $color--main;
+  }
+  @include mq($from: desktop) {
+    border-right: 1px solid $color--black;
+  }
+}
+
+.footer__social__item:first-child {
+  @include mq($from: desktop) {
+    border-left: 1px solid $color--black;
+  }
+}
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 50px;
+}
+
+.footer__social__icon {
+  height: 34px;
+  width: 34px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}

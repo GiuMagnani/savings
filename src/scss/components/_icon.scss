@@ -1,0 +1,84 @@
+.logo__icon .logo__path {
+  fill: $color--black;
+  stroke-width: 2px;
+  stroke: $color--black;
+  user-select: none;
+}
+
+// Stroke dash animation
+
+// .header__logo_container .logo__icon:hover .logo__path {
+//   fill: $color--white;
+//   stroke-dasharray: 3195;
+//   stroke-dashoffset: 3195;
+// }
+
+//animation: dash 2s linear forwards, paint 1s 2s linear forwards;
+
+// @keyframes dash {
+//   from {
+//     stroke-dashoffset: 3195;
+//   }
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
+
+// @keyframes paint {
+//   from {
+//     fill: $color--white;
+//   }
+//   to {
+//     fill: $color--vdark-grey;
+//   }
+// }
+
+.overlay__logo_container .logo__icon .logo__path {
+  fill: $color--white;
+  stroke-width: 2px;
+  stroke: $color--white;
+}
+
+.footer__social__item .svg__1 {
+  fill: $color--black;
+}
+
+.footer__social__item:hover .svg__1,
+.footer__social__item:focus .svg__1,
+.footer__social__item:active .svg__1 {
+  fill: $color--white;
+}
+
+.footer--color .footer__social__item .svg__1 {
+  fill: $color--white;
+}
+
+.footer--color .footer__social__item:hover .svg__1,
+.footer--color .footer__social__item:focus .svg__1,
+.footer--color .footer__social__item:active .svg__1 {
+  fill: $color--main;
+}
+
+
+.social__item {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  color: transparent;
+  display: inline-block;
+  position: relative;
+  //background-color: $color--white;
+  @include on-event {
+    text-decoration: none;
+    color: transparent;
+    //background-color: $color--white;
+  }
+}
+
+.social__icon {
+  height: 34px;
+  width: 34px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}

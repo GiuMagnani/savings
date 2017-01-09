@@ -5,18 +5,20 @@
   <meta name="description" content="Savings">
   <title>Savings</title>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
-  <header>
+  <header class="header">
     <h1>Savings</h1>
   </header> <!-- end header -->
 
-  <section class="start">
+  <section class="section-start">
 
-    <h1>To start, select the currencies you need:</h1>
+    <h1 class="section__heading">To start, select the currencies you need:</h1>
 
     <label for="baseCurrency">Select your base currency:</label>
-    <select name="baseCurrency" id="baseCurrency" class="selectCurrency" onChange="isBaseCurrencySelected();">
+    <select name="baseCurrency" id="baseCurrency" class="select selectCurrency" onChange="isBaseCurrencySelected();">
       <option value="Select currency">Select currency</option>
       <option value="CLP">CLP</option>
       <option value="EUR">EUR</option>
@@ -25,7 +27,7 @@
     <h3>Select your secondary currencies (max 3):</h3>
     <ul id="secondaryCurrenciesList">
       <li class="selectCurrencyItem">
-        <select name="secondaryCurrencies" class="selectCurrency" id="selectSecondaryCurrency" onChange="isSecondaryCurrencySelected(event);" disabled>
+        <select name="secondaryCurrencies" class="select selectCurrency" id="selectSecondaryCurrency" onChange="isSecondaryCurrencySelected(event);" disabled>
           <option value="Select currency">Select currency</option>
           <option value="CLP">CLP</option>
           <option value="EUR">EUR</option>

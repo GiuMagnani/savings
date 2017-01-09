@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.header {
+  background-color: $color--neon-blue;
+  color: $color--white;
+  padding: 0;
+  margin: 0;
+  text-transform: lowercase;
+  font-size: 0.75rem;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}

@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$font--text: 'Nunito', 'Helvetica', 'Arial', sans-serif !default;
+
+$font--primary: 'Playfair Display', serif;
+
+/// Medium grey
+/// @type Color
+$color--vlight-grey: #f7f6f7 !default;
+
+/// Light grey
+/// @type Color
+$color--light-grey: #ebe9eb !default;
+
+/// Medium grey
+/// @type Color
+$color--mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$color--dark-grey: rgb(68, 68, 68) !default;
+
+/// Very Dark grey
+/// @type Color
+$color--vdark-grey: #444 !default;
+
+$color--black: #111;
+$color--white: #FFF;
+$color--deep-sky-blue: #05D5FF;
+$color--neon-blue: #5533FF;
+$color--summer-sky: #30ACF1;
+
+/// Main brand color
+/// @type Color
+$color--main: $color--summer-sky;
+
+/// Copy text color
+/// @type Color
+$color--text: $color--black;
+
+// Font Weight
+
+$f-weight--light: 300;
+$f-weight--normal: 400;
+$f-weight--bold: 700;

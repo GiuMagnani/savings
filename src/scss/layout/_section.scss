@@ -1,0 +1,14 @@
+section {
+  padding: 0 2em;
+}
+
+.section-start {
+  background: linear-gradient( $color--neon-blue 10%, $color--deep-sky-blue 100% );
+  background-color: $color--main;
+  color: $color--white;
+}
+
+.section__heading {
+  font-size: 2rem;
+  font-weight: normal;
+}
