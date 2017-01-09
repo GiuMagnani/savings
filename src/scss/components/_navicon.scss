@@ -1,0 +1,93 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the NAVICON of the site.
+// -----------------------------------------------------------------------------
+
+.navicon-button {
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+  top: 22px;
+  right: 4%;
+  /* To absolutely position elements inside */
+  margin: 0 auto;
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: 0.1s ease;
+  height: 46px;
+  padding-top: 15px;
+  @include mq($from: desktop) {
+    display: none;
+  }
+}
+.navicon {
+  /* Center bar */
+  background-color: $color--black;
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 3px;
+  top: 0px;
+  transition: 0.2s ease;
+}
+
+.navicon:after,
+.navicon:before {
+  /* Top and bottom bars */
+  background-color: $color--black;
+  display: block;
+  content: "";
+  height: 3px;
+  width: 40px;
+  position: absolute;
+  transition: 0.2s ease;
+}
+
+/* Hamburger */
+
+.x .navicon:after {
+  top: 10px;
+}
+
+.x .navicon:before {
+  top: -10px;
+}
+
+.open.x .navicon {
+  /* Angles bars to make the X */
+  transform: rotate(45deg);
+}
+
+.open.x .navicon:after {
+  transform: rotate(-90deg);
+  top: 0 !important;
+  width: 30px;
+}
+
+.open.x .navicon:before {
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  top: 0 !important;
+  width: 30px;
+}
+
+.open.x .navicon {
+  /* Angles bars to make the X */
+  transform: rotate(45deg);
+  width: 30px;
+  top: 5px;
+  left: 4px;
+  &:after {
+    transform: rotate(-90deg);
+    top: 0 !important;
+  }
+  &:before {
+    transform: rotate(-90deg);
+    top: 0 !important;
+  }
+}

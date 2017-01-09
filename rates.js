@@ -71,8 +71,8 @@ startButton.addEventListener( 'click', function() {
       toAppend.className = 'rates__secondary__item';
       function addSecondaryRate() {
         toAppend.innerHTML += "<span class='rates__secondary__name'>" + ArrayAllCurrencies[i] + "</span>";
-        toAppend.innerHTML += "<span class='rates__secondary__conversion'>" + 1/data.rates[ArrayAllCurrencies[i]] + "</span>";
-        toAppend.innerHTML += "<span class='rates__secondary__rate'>" + data.rates[ArrayAllCurrencies[i]] + "</span>";
+        toAppend.innerHTML += "<span class='rates__secondary__conversion'>" + round(1/data.rates[ArrayAllCurrencies[i]], 4) + "</span>";
+        toAppend.innerHTML += "<span class='rates__secondary__rate'>" + round(data.rates[ArrayAllCurrencies[i]], 4) + "</span>";
         ratesSecondaryList.appendChild(toAppend);
         let currencyName = ArrayAllCurrencies[i];
         let currencyRate = 1/data.rates[ArrayAllCurrencies[i]];
@@ -103,9 +103,9 @@ updateConvertSelects();
 
 // conversion
 // get quantity from input value
-let quantityInput = document.getElementById('inputCurrency').value;
-let convertCurrency1 = document.getElementById('convertCurrency1').value;
-let convertCurrency2 = document.getElementById('convertCurrency2').value;
+let quantityInput;
+let convertCurrency1;
+let convertCurrency2;
 let conversionResult;
 let convertCurrency = document.getElementById('convertCurrency');
 let swapCurrency = document.getElementById('swapCurrency');
@@ -143,14 +143,24 @@ swapCurrency.addEventListener( 'click', function() {
 // require 2 values to swap: currency1 and currency2.
 
 convertCurrency.addEventListener( 'click', function() {
+  quantityInput = document.getElementById('inputCurrency').value;
+  convertCurrency1 = document.getElementById('convertCurrency1').value;
+  convertCurrency2 = document.getElementById('convertCurrency2').value;
   if ( quantityInput >= 1 ) {
     convertCurrency1 = getRateInArray(Currencies, "name", document.getElementById('convertCurrency1').value, "rate");
     console.log(convertCurrency1);
     convertCurrency2 = getRateInArray(Currencies, "name", document.getElementById('convertCurrency2').value, "rate");
     console.log(convertCurrency2);
     conversion(quantityInput, convertCurrency1, convertCurrency2);
-    convertResults.textContent = conversionResult;
+    convertResults.textContent = round(conversionResult, 4);
   } else {
     console.log('Wrong quantity.');
   };
 });
+
+// Round
+// by Jack Moore
+// http://www.jacklmoore.com/notes/rounding-in-javascript/
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Savings",
+  "version": "0.0.1",
+  "description": "App to keep track of your savings.",
+  "main": "index.html",
+  "bugs": {
+    "url" : "https://github.com/owner/project/issues",
+    "email" : "project@hostname.com"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Giu Magnani <giumagnani@gmail.com> (http://giumagnani.com/)",
+  "license": "ISC",
+  "repository" : "GiuMagnani/savings",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "coffee": "^3.3.0",
+    "favicons": "^4.8.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-gm": "0.0.8",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "pump": "^1.0.1",
+    "sass": "^0.5.0"
+  },
+  "dependencies": {
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.0"
+  }
+}

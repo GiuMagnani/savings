@@ -1,0 +1,12 @@
+/**
+ * Basic typography style for copy text
+ */
+
+ body {
+  color: $color--text;
+  font: 400 18px / 1.2 $font--text;
+}
+
+h1 {
+  text-align: center;
+}
